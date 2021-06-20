@@ -101,10 +101,7 @@
                     <version>2.22.1</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <!-- <suiteXmlFile>RunAllLabs_ChromeNodes.xml</suiteXmlFile> -->
-                            <!-- <suiteXmlFile>TrialRun_3-Nodes.xml</suiteXmlFile> -->
-                            <!-- <suiteXmlFile>Run60Labs_ChromeNodes.xml</suiteXmlFile> -->
-                            <suiteXmlFile>Run30Labs_ChromeNodes.xml</suiteXmlFile>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
