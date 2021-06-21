@@ -164,11 +164,11 @@ public class BaseTasksClass {
         DataFormatter formatter = new DataFormatter();
 
         try (FileInputStream inputFile = new FileInputStream(
-                System.getProperty("user.dir") + "/resources/datarepo/htmllinks.xlsx")) {
+                System.getProperty("user.dir") + "/resources/datarepo/urls.xlsx")) {
 
             workBook = new XSSFWorkbook(inputFile);
 
-            XSSFSheet sheet = workBook.getSheet("links");
+            XSSFSheet sheet = workBook.getSheet("urls");
 
             int rowCount = sheet.getPhysicalNumberOfRows();
 

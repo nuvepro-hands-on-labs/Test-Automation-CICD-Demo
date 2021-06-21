@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class ChromeNode1 extends BaseTasksClass {
 
@@ -54,7 +55,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void chromeNode1_BaseURL() {
 
         System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + properties().getProperty("baseurl"));
@@ -70,13 +71,15 @@ public class ChromeNode1 extends BaseTasksClass {
     @Test(enabled = true)
     public void chromeNode1_CheckURLs() {
 
+        System.out.println("Number of sites to check: " + getHTMLLinks().size());
+
         for (int i = 0; i < getHTMLLinks().size(); i++) {
 
-            System.out.println("\n\n" + ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(i));
+            System.out.println("\n\n" + ChromeNode1.class.getSimpleName() + ": Loading Main URL: " + getHTMLLinks().get(i));
 
             driver.get(getHTMLLinks().get(i));
 
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Checking different URL response.");
+            System.out.println(ChromeNode1.class.getSimpleName() + ": Checking different URL in Main for response.");
 
             checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(i));
 
