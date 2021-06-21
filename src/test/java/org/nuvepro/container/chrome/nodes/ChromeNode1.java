@@ -71,7 +71,7 @@ public class ChromeNode1 extends BaseTasksClass {
     @Test(enabled = true)
     public void chromeNode1_CheckURLs() {
 
-        System.out.println("Number of sites to check: " + getHTMLLinks().size());
+        System.out.println("\n\nNumber of sites to check: " + getHTMLLinks().size());
 
         for (int i = 0; i < getHTMLLinks().size(); i++) {
 
