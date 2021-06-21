@@ -21,7 +21,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
     private int link = 0;
 
-    @BeforeClass
+
     public void setupLocalDriver() {
 
         // Only to test the setup, local driver will be used.
@@ -36,7 +36,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
     }
 
-
+    @BeforeClass
     public void setupRemoteDriver() {
 
         System.out.println(ChromeNode1.class.getSimpleName() +
