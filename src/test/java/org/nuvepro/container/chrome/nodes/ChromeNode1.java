@@ -61,8 +61,6 @@ public class ChromeNode1 extends BaseTasksClass {
 
         driver.get(properties().getProperty("baseurl"));
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL response.");
-
         driver.findElement(By.tagName("a")).click();
 
         System.out.println("Opened Nuvepro URL.");
@@ -70,15 +68,15 @@ public class ChromeNode1 extends BaseTasksClass {
     }
 
     @Test(enabled = true)
-    public void chromeNode1_NuveURL() {
+    public void chromeNode1_CheckURLs() {
 
         for (int i = 0; i < getHTMLLinks().size(); i++) {
 
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(i));
+            System.out.println("\n\n" + ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(i));
 
             driver.get(getHTMLLinks().get(i));
 
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Checking Nuvepro URL response.");
+            System.out.println(ChromeNode1.class.getSimpleName() + ": Checking different URL response.");
 
             checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(i));
 
