@@ -19,7 +19,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
     private WebDriver driver = null;
 
-    private int link1 = 0, link2 = 0;
+    private int link = 0;
 
 
     public void setupLocalDriver() {
@@ -30,9 +30,9 @@ public class ChromeNode1 extends BaseTasksClass {
 
         driver = getDriver(properties().getProperty("browser"));
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link1));
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
 
-        driver.get(getHTMLLinks().get(link1));
+        driver.get(getHTMLLinks().get(link));
 
     }
 
@@ -52,9 +52,9 @@ public class ChromeNode1 extends BaseTasksClass {
 
         }
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link1));
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
 
-        driver.get(getHTMLLinks().get(link1));
+        driver.get(getHTMLLinks().get(link));
 
     }
 
@@ -67,7 +67,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
         System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL response.");
 
-        if (checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(link1))) {
+        if (checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(link))) {
 
             System.out.println(ChromeNode1.class.getSimpleName() + ": Opening link: "
                     + driver.findElement(By.xpath("//a[contains(@href,'http://')]")).getText());
@@ -77,11 +77,7 @@ public class ChromeNode1 extends BaseTasksClass {
             System.out.println(ChromeNode1.class.getSimpleName()
                     + ": Checking response of other links in Nuvepro page.");
 
-            // checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), driver.getCurrentUrl());
-
-            driver.get(getHTMLLinks().get(link2));
-
-            checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(link2));
+            checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), driver.getCurrentUrl());
 
         } else {
 
