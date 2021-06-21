@@ -26,3 +26,13 @@
 18:20:45.128 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.
 18:22:23.550 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Requested driver is for: chrome
 18:22:23.556 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.
+10:35:02.147 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Requested driver is for: chrome
+10:35:02.154 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.
+10:40:06.333 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Requested driver is for: chrome
+10:40:06.339 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.
+10:44:10.652 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Requested driver is for: chrome
+10:44:10.676 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.
+10:46:52.305 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Requested driver is for: chrome
+10:46:52.315 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.
+10:51:41.846 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Requested driver is for: chrome
+10:51:41.854 [TestNG-test=test-1] INFO  org.nuvepro.helperclasses.ClassFactory - Returning ChromeDriver.

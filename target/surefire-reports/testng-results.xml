@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="32258" started-at="2021-06-20T12:52:23Z" finished-at="2021-06-20T12:52:55Z">
+  <suite name="All Test Suite" duration-ms="109730" started-at="2021-06-21T05:21:41Z" finished-at="2021-06-21T05:23:31Z">
     <groups>
     </groups>
-    <test name="test" duration-ms="32258" started-at="2021-06-20T12:52:23Z" finished-at="2021-06-20T12:52:55Z">
+    <test name="test" duration-ms="109730" started-at="2021-06-21T05:21:41Z" finished-at="2021-06-21T05:23:31Z">
       <class name="org.nuvepro.container.chrome.nodes.ChromeNode1">
-        <test-method status="PASS" signature="setupLocalDriver()[pri:0, instance:org.nuvepro.container.chrome.nodes.ChromeNode1@3427b02d]" name="setupLocalDriver" is-config="true" duration-ms="5344" started-at="2021-06-20T12:52:23Z" finished-at="2021-06-20T12:52:28Z">
+        <test-method status="PASS" signature="setupLocalDriver()[pri:0, instance:org.nuvepro.container.chrome.nodes.ChromeNode1@647e447]" name="setupLocalDriver" is-config="true" duration-ms="5796" started-at="2021-06-21T05:21:41Z" finished-at="2021-06-21T05:21:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupLocalDriver -->
-        <test-method status="PASS" signature="chromeNode1()[pri:0, instance:org.nuvepro.container.chrome.nodes.ChromeNode1@3427b02d]" name="chromeNode1" duration-ms="26037" started-at="2021-06-20T12:52:28Z" finished-at="2021-06-20T12:52:54Z">
+        <test-method status="PASS" signature="chromeNode1()[pri:0, instance:org.nuvepro.container.chrome.nodes.ChromeNode1@647e447]" name="chromeNode1" duration-ms="103060" started-at="2021-06-21T05:21:47Z" finished-at="2021-06-21T05:23:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- chromeNode1 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:org.nuvepro.container.chrome.nodes.ChromeNode1@3427b02d]" name="tearDown" is-config="true" duration-ms="847" started-at="2021-06-20T12:52:54Z" finished-at="2021-06-20T12:52:55Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:org.nuvepro.container.chrome.nodes.ChromeNode1@647e447]" name="tearDown" is-config="true" duration-ms="837" started-at="2021-06-21T05:23:30Z" finished-at="2021-06-21T05:23:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

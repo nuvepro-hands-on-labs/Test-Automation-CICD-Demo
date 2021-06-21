@@ -21,7 +21,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
     private int link = 0;
 
-    @BeforeClass
+
     public void setupLocalDriver() {
 
         // Only to test the setup, local driver will be used.
@@ -30,16 +30,17 @@ public class ChromeNode1 extends BaseTasksClass {
 
         driver = getDriver(properties().getProperty("browser"));
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": URL to load: " + getHTMLLinks().get(link));
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
 
         driver.get(getHTMLLinks().get(link));
 
     }
 
-
+    @BeforeClass
     public void setupRemoteDriver() {
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Initializing REMOTE WEBDRIVER to run the tests remotely in Docker Containers.");
+        System.out.println(ChromeNode1.class.getSimpleName() +
+                ": Initializing REMOTE WEBDRIVER to run the tests remotely in Docker Containers.");
 
         try {
 
@@ -51,7 +52,7 @@ public class ChromeNode1 extends BaseTasksClass {
 
         }
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": URL to load: " + getHTMLLinks().get(link));
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
 
         driver.get(getHTMLLinks().get(link));
 
@@ -62,9 +63,9 @@ public class ChromeNode1 extends BaseTasksClass {
 
         System.out.println(ChromeNode1.class.getSimpleName() + ": Waiting for Base URL to load.");
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Base URL Title: " + driver.getTitle());
+        // System.out.println(ChromeNode1.class.getSimpleName() + ": Base URL Title: " + driver.getTitle());
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL status.");
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL response.");
 
         if (checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(link))) {
 
@@ -73,15 +74,17 @@ public class ChromeNode1 extends BaseTasksClass {
 
             driver.findElement(By.tagName("a")).click();
 
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Checking other links in the page opened");
+            System.out.println(ChromeNode1.class.getSimpleName()
+                    + ": Checking response of other links in Nuvepro page.");
 
             checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), driver.getCurrentUrl());
 
         } else {
 
-            System.out.println("Failed to access link.");
+            System.out.println(ChromeNode1.class.getSimpleName() + ": Failed to load base URL.");
 
-            //Assert.fail();
+            Assert.fail();
+
         }
 
         sleepTime(ChromeNode1.class.getSimpleName(), 10);

@@ -50,7 +50,7 @@ public class BaseTasksClass {
 
     }
 
-    public RemoteWebDriver getRemoteDriver(URL remoteUrl, DesiredCapabilities capabilities) {
+    public WebDriver getRemoteDriver(URL remoteUrl, DesiredCapabilities capabilities) {
 
         System.out.println("Remote URL: " + remoteUrl);
 
@@ -191,20 +191,29 @@ public class BaseTasksClass {
 
         driver.get(link);
 
+        boolean linkStatus = false;
+
+        int linkCount = 0;
+
         ArrayList<WebElement> urls = new ArrayList<WebElement>();
 
         urls.addAll(driver.findElements(By.tagName("a")));
 
         HttpURLConnection huc = null;
 
+        System.out.println("\n\n" + nodeName + ": Total links to check response: " + urls.size());
+
+        checkHTTPResponse:
         for (int i = 0; i < urls.size(); i++) {
+
+            linkCount++;
 
             try {
 
-                System.out.println("\n\nURL is: " + urls.get(i).getAttribute("href"));
-
                 if (urls.get(i).getAttribute("href").startsWith("http")) {
-                    System.out.println("Checking URL is active: " + urls.get(i).getAttribute("href"));
+
+                    System.out.println(nodeName + ": " + linkCount + ": Checking response of: "
+                            + urls.get(i).getAttribute("href"));
 
                     huc = (HttpURLConnection) new URL(urls.get(i).getAttribute("href")).openConnection();
 
@@ -214,15 +223,17 @@ public class BaseTasksClass {
 
                     if (huc.getResponseCode() >= 400) {
 
-                        System.err.println("Link is broken.");
+                        System.err.println(nodeName + ": Response Failed!!");
 
-                        return false;
+                        linkStatus = false;
+
+                        // break checkHTTPResponse;
 
                     } else {
 
-                        System.out.println("Link is working.");
+                        System.out.println(nodeName + ": Response OK");
 
-                        return true;
+                        linkStatus = true;
 
                     }
 
@@ -236,7 +247,7 @@ public class BaseTasksClass {
 
         }
 
-        return false;
+        return linkStatus;
 
     }
 
