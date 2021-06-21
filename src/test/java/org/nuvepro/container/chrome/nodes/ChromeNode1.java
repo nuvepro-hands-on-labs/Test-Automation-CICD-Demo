@@ -63,7 +63,9 @@ public class ChromeNode1 extends BaseTasksClass {
 
         System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL response.");
 
-        checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), properties().getProperty("baseurl"));
+        driver.findElement(By.tagName("a")).click();
+
+        System.out.println("Opened Nuvepro URL.");
 
     }
 
