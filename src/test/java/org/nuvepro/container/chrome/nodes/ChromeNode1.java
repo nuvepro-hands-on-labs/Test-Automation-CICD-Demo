@@ -70,7 +70,7 @@ public class ChromeNode1 extends BaseTasksClass {
     }
 
     @Test(enabled = true)
-    public void chromeNode1_NuveURL(String link) {
+    public void chromeNode1_NuveURL() {
 
         for (int i = 0; i < getHTMLLinks().size(); i++) {
 
