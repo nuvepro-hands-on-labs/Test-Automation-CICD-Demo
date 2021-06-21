@@ -52,42 +52,31 @@ public class ChromeNode1 extends BaseTasksClass {
 
         }
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
+    }
 
-        driver.get(getHTMLLinks().get(link));
+    @Test(enabled = true)
+    public void chromeNode1_BaseURL() {
+
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + properties().getProperty("baseurl"));
+
+        driver.get(properties().getProperty("baseurl"));
+
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL response.");
+
+        checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), properties().getProperty("baseurl"));
 
     }
 
     @Test(enabled = true)
-    public void chromeNode1() {
+    public void chromeNode1_NuveURL() {
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Waiting for Base URL to load.");
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + properties().getProperty("nuveprourl"));
 
-        // System.out.println(ChromeNode1.class.getSimpleName() + ": Base URL Title: " + driver.getTitle());
+        driver.get(properties().getProperty("nuveprourl"));
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Checking base URL response.");
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Checking Nuvepro URL response.");
 
-        if (checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(link))) {
-
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Opening link: "
-                    + driver.findElement(By.xpath("//a[contains(@href,'http://')]")).getText());
-
-            driver.findElement(By.tagName("a")).click();
-
-            System.out.println(ChromeNode1.class.getSimpleName()
-                    + ": Checking response of other links in Nuvepro page.");
-
-            checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), driver.getCurrentUrl());
-
-        } else {
-
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Failed to load base URL.");
-
-            Assert.fail();
-
-        }
-
-        sleepTime(ChromeNode1.class.getSimpleName(), 10);
+        checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), properties().getProperty("nuveprourl"));
 
 
     }
