@@ -5,18 +5,16 @@ import org.apache.logging.log4j.Logger;
 import org.nuvepro.common.BaseTasksClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 
-public class ChromeNode1 extends BaseTasksClass {
+public class ChromeNode2 extends BaseTasksClass {
 
-    private static Logger log = LogManager.getLogger(ChromeNode1.class.getName());
+    private static Logger log = LogManager.getLogger(ChromeNode2.class.getName());
 
     private WebDriver driver = null;
 
@@ -27,11 +25,11 @@ public class ChromeNode1 extends BaseTasksClass {
 
         // Only to test the setup, local driver will be used.
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Initializing DRIVER in local system.");
+        System.out.println(ChromeNode2.class.getSimpleName() + ": Initializing DRIVER in local system.");
 
         driver = getDriver(properties().getProperty("browser"));
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
+        System.out.println(ChromeNode2.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
 
         driver.get(getHTMLLinks().get(link));
 
@@ -40,7 +38,7 @@ public class ChromeNode1 extends BaseTasksClass {
     @BeforeClass
     public void setupRemoteDriver() {
 
-        System.out.println(ChromeNode1.class.getSimpleName() +
+        System.out.println(ChromeNode2.class.getSimpleName() +
                 ": Initializing REMOTE WEBDRIVER to run the tests remotely in Docker Containers.");
 
         try {
@@ -58,7 +56,7 @@ public class ChromeNode1 extends BaseTasksClass {
     @Test(enabled = false)
     public void baseUrlCheck() {
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + properties().getProperty("baseurl"));
+        System.out.println(ChromeNode2.class.getSimpleName() + ": Loading: " + properties().getProperty("baseurl"));
 
         driver.get(properties().getProperty("baseurl"));
 
@@ -75,13 +73,13 @@ public class ChromeNode1 extends BaseTasksClass {
 
         for (int i = 0; i < getHTMLLinks().size(); i++) {
 
-            System.out.println("\n\n" + ChromeNode1.class.getSimpleName() + ": Loading Main URL: " + getHTMLLinks().get(i));
+            System.out.println("\n\n" + ChromeNode2.class.getSimpleName() + ": Loading Main URL: " + getHTMLLinks().get(i));
 
             driver.get(getHTMLLinks().get(i));
 
-            System.out.println(ChromeNode1.class.getSimpleName() + ": Checking different URL in Main for response.");
+            System.out.println(ChromeNode2.class.getSimpleName() + ": Checking different URL in Main for response.");
 
-            checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), getHTMLLinks().get(i));
+            checkSiteLinks(driver, ChromeNode2.class.getSimpleName(), getHTMLLinks().get(i));
 
         }
 
@@ -90,7 +88,7 @@ public class ChromeNode1 extends BaseTasksClass {
     @AfterTest
     public void tearDown() {
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": After running test, closing the driver.");
+        System.out.println(ChromeNode2.class.getSimpleName() + ": After running test, closing the driver.");
 
         driver.quit();
 

@@ -8,6 +8,10 @@
         <classes>
             <class name="org.nuvepro.container.chrome.nodes.ChromeNode1">
             </class>
+            <class name="org.nuvepro.container.chrome.nodes.ChromeNode2">
+            </class>
+            <class name="org.nuvepro.container.chrome.nodes.ChromeNode3">
+            </class>
         </classes>
     </test>
 </suite>
