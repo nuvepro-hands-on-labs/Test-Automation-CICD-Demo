@@ -15,6 +15,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.DataProvider;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -154,6 +155,7 @@ public class BaseTasksClass {
 
     }
 
+    @DataProvider(name = "getLink")
     public ArrayList<String> getHTMLLinks() {
 
         XSSFWorkbook workBook = null;

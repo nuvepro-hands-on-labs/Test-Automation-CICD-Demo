@@ -69,16 +69,16 @@ public class ChromeNode1 extends BaseTasksClass {
 
     }
 
-    @Test(enabled = true)
-    public void chromeNode1_NuveURL() {
+    @Test(enabled = true, dataProvider = "getLink", dataProviderClass = BaseTasksClass.class)
+    public void chromeNode1_NuveURL(String link) {
 
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + properties().getProperty("nuveprourl"));
+        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + link);
 
-        driver.get(properties().getProperty("nuveprourl"));
+        driver.get(link);
 
         System.out.println(ChromeNode1.class.getSimpleName() + ": Checking Nuvepro URL response.");
 
-        checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), properties().getProperty("nuveprourl"));
+        checkSiteLinks(driver, ChromeNode1.class.getSimpleName(), link);
 
 
     }
