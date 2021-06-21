@@ -155,7 +155,6 @@ public class BaseTasksClass {
 
     }
 
-    @DataProvider(name = "getLink")
     public ArrayList<String> getHTMLLinks() {
 
         XSSFWorkbook workBook = null;
