@@ -3,25 +3,19 @@ package org.nuvepro.container.chrome.nodes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.nuvepro.common.BaseTasksClass;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 
 public class ChromeNode1 extends BaseTasksClass {
 
     private static Logger log = LogManager.getLogger(ChromeNode1.class.getName());
 
     private WebDriver driver = null;
-
-    private int link = 0;
-
 
     public void setupLocalDriver() {
 
@@ -30,10 +24,6 @@ public class ChromeNode1 extends BaseTasksClass {
         System.out.println(ChromeNode1.class.getSimpleName() + ": Initializing DRIVER in local system.");
 
         driver = getDriver(properties().getProperty("browser"));
-
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + getHTMLLinks().get(link));
-
-        driver.get(getHTMLLinks().get(link));
 
     }
 
@@ -52,19 +42,6 @@ public class ChromeNode1 extends BaseTasksClass {
             e.printStackTrace();
 
         }
-
-    }
-
-    @Test(enabled = false)
-    public void baseUrlCheck() {
-
-        System.out.println(ChromeNode1.class.getSimpleName() + ": Loading: " + properties().getProperty("baseurl"));
-
-        driver.get(properties().getProperty("baseurl"));
-
-        driver.findElement(By.tagName("a")).click();
-
-        System.out.println("Opened Nuvepro URL.");
 
     }
 
