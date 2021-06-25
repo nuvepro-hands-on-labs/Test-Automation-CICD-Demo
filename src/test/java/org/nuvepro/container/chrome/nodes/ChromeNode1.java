@@ -54,7 +54,11 @@ public class ChromeNode1 extends BaseTasksClass {
 
             System.out.println("\n\n" + ChromeNode1.class.getSimpleName() + ": Loading Main URL: " + getHTMLLinks().get(i));
 
-            driver.get(getHTMLLinks().get(i));
+            if (getHTMLLinks().get(i) != null) {
+
+                driver.get(getHTMLLinks().get(i));
+
+            }
 
             System.out.println(ChromeNode1.class.getSimpleName() + ": Checking different URL in Main for response.");
 
