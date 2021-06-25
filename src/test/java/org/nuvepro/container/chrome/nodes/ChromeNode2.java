@@ -58,11 +58,11 @@ public class ChromeNode2 extends BaseTasksClass {
 
                 driver.get(getHTMLLinks().get(i));
 
+                System.out.println(ChromeNode3.class.getSimpleName() + ": Checking different URL in Main for response.");
+
+                checkSiteLinks(driver, ChromeNode3.class.getSimpleName(), getHTMLLinks().get(i));
+
             }
-
-            System.out.println(ChromeNode2.class.getSimpleName() + ": Checking different URL in Main for response.");
-
-            checkSiteLinks(driver, ChromeNode2.class.getSimpleName(), getHTMLLinks().get(i));
 
         }
 
